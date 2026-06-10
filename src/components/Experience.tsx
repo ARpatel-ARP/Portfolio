@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FiAward, FiBriefcase, FiBook } from 'react-icons/fi';
+import { FiAward, FiBriefcase, FiBook, FiExternalLink } from 'react-icons/fi';
 
 const Experience = () => {
   const ref = useRef(null);
@@ -14,6 +14,7 @@ const Experience = () => {
       description: 'Pursuing Bachelor\'s in Computer Science Engineering with a focus on full stack web development',
       icon: FiBook,
       color: 'from-blue-500 to-cyan-500',
+      link: null,
     },
     {
       year: '2024',
@@ -22,6 +23,7 @@ const Experience = () => {
       description: 'Worked on machine learning models and AI-based solutions during internship training at IBM',
       icon: FiBriefcase,
       color: 'from-primary to-secondary',
+      link: null,
     },
     {
       year: '2024',
@@ -30,6 +32,7 @@ const Experience = () => {
       description: 'Completed a certified course in Artificial Intelligence and Machine Learning issued by Google',
       icon: FiAward,
       color: 'from-green-500 to-emerald-500',
+      link: 'https://drive.google.com/file/d/1J10NqWET2t9n4P3WG98M0tpdQA93jf9_/view',
     },
   ];
 
@@ -80,9 +83,20 @@ const Experience = () => {
                     <p className="text-primary font-dm font-semibold mb-3">
                       {item.place}
                     </p>
-                    <p className="text-gray-400 font-dm">
+                    <p className="text-gray-400 font-dm mb-3">
                       {item.description}
                     </p>
+                    {item.link && (
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-dm text-primary hover:text-primary/80 transition-colors duration-200"
+                      >
+                        View Certificate
+                        <FiExternalLink size={14} />
+                      </a>
+                    )}
                   </div>
                 </div>
 
