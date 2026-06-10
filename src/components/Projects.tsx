@@ -1,12 +1,33 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FiExternalLink, FiGithub } from 'react-icons/fi';
+import { FiExternalLink, FiGithub, FiLock, FiMessageSquare, FiBook } from 'react-icons/fi';
+import { MdMovie } from 'react-icons/md';
+import { IconType } from 'react-icons';
+
+interface Project {
+  name: string;
+  description: string;
+  tech: string[];
+  liveDemo: string;
+  github: string;
+  gradient: string;
+  icon: IconType;
+}
 
 const Projects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  const projects = [
+  const projects: Project[] = [
+    {
+      name: 'LMS — Online Learning Platform',
+      description: 'A full-stack Learning Management System with course management, user authentication, and role-based access for students and instructors.',
+      tech: ['MERN Stack', 'React', 'Node.js', 'MongoDB', 'Tailwind CSS'],
+      liveDemo: 'https://lmsonlinelearning.vercel.app',
+      github: 'https://github.com/ARpatel-ARP/LMS---learning-platform',
+      gradient: 'from-purple-500/20 to-pink-500/20',
+      icon: FiBook,
+    },
     {
       name: 'Movie-Hunt: Movies Overviewing Website',
       description: 'Movie Hunt is a movies overviewing website with an interface similar to Netflix',
@@ -14,6 +35,7 @@ const Projects = () => {
       liveDemo: 'https://movie-hunt-89nk.onrender.com',
       github: 'https://github.com/ARpatel-ARP/Movie-hunt',
       gradient: 'from-red-500/20 to-orange-500/20',
+      icon: MdMovie,
     },
     {
       name: 'Voxly: ConvoHub',
@@ -22,15 +44,18 @@ const Projects = () => {
       liveDemo: 'https://convohub-ju3o.onrender.com',
       github: 'https://github.com/ARpatel-ARP/Chat-app',
       gradient: 'from-blue-500/20 to-cyan-500/20',
+      icon: FiMessageSquare,
     },
     {
       name: 'Pass-Op',
-      description: 'A password manager site to manage all your different sites\' passwords in one place',
+      description: "A password manager site to manage all your different sites' passwords in one place",
       tech: ['React', 'Tailwind CSS'],
       liveDemo: 'https://pass-ops.vercel.app',
       github: 'https://github.com/ARpatel-ARP/Pass-ops',
       gradient: 'from-green-500/20 to-emerald-500/20',
+      icon: FiLock,
     },
+    
   ];
 
   return (
@@ -64,9 +89,7 @@ const Projects = () => {
 
               <div className="relative z-10 p-6">
                 <div className={`h-48 bg-gradient-to-br ${project.gradient} rounded-lg mb-6 flex items-center justify-center`}>
-                  <div className="text-6xl font-syne font-bold text-white/20">
-                    {project.name.charAt(0)}
-                  </div>
+                  <project.icon size={72} className="text-white/40" />
                 </div>
 
                 <h3 className="text-xl font-syne font-bold mb-3 text-white group-hover:text-primary transition-colors duration-300">
