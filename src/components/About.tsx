@@ -2,17 +2,13 @@ import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import {
   SiReact,
-  SiNextdotjs,
   SiNodedotjs,
   SiExpress,
   SiMongodb,
-  SiPostgresql,
-  SiTypescript,
-  SiDocker,
   SiGit,
   SiTailwindcss,
 } from 'react-icons/si';
-import { FiServer, FiCloud } from 'react-icons/fi';
+import { FiServer } from 'react-icons/fi';
 
 const About = () => {
   const ref = useRef(null);
@@ -21,7 +17,7 @@ const About = () => {
   const skills = [
     { name: 'React', icon: SiReact, color: '#61DAFB' },
     { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
-    { name: 'Express', icon: SiExpress, color: '#000000' },
+    { name: 'Express', icon: SiExpress, color: '#888888' },
     { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
     { name: 'Git', icon: SiGit, color: '#F05032' },
     { name: 'REST APIs', icon: FiServer, color: '#00f5ff' },
@@ -29,11 +25,10 @@ const About = () => {
   ];
 
   const stats: { label: string; value: number; suffix: string }[] = [
-  { label: 'Fresher', value: 0, suffix: '' },
-  { label: 'Projects Built', value: 4, suffix: '+' },
-  { label: 'Cups of Coffee', value: 500, suffix: '+' },
-];
-
+    { label: 'Fresher', value: 0, suffix: '' },
+    { label: 'Projects Built', value: 4, suffix: '+' },
+    { label: 'Cups of Coffee', value: 500, suffix: '+' },
+  ];
 
   return (
     <section id="about" ref={ref} className="py-20 bg-dark-lighter/50">
@@ -87,6 +82,7 @@ const About = () => {
           </motion.div>
         </div>
 
+        {/* Skills */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
@@ -108,13 +104,14 @@ const About = () => {
                 <div
                   className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"
                   style={{ background: `${skill.color}20` }}
-                ></div>
+                />
                 <skill.icon className="text-3xl relative z-10" style={{ color: skill.color }} />
                 <span className="text-sm font-dm text-gray-300 relative z-10">{skill.name}</span>
               </motion.div>
             ))}
           </div>
         </motion.div>
+
       </div>
     </section>
   );
@@ -164,8 +161,7 @@ const StatCounter = ({
       className="bg-dark border border-primary/20 rounded-lg p-6 text-center hover:border-primary/50 transition-all duration-300"
     >
       <div className="text-3xl sm:text-4xl font-syne font-bold text-gradient mb-2">
-        {count}
-        {suffix}
+        {count}{suffix}
       </div>
       <div className="text-xs sm:text-sm text-gray-400 font-dm">{label}</div>
     </motion.div>
