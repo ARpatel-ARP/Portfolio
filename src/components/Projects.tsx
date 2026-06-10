@@ -52,7 +52,7 @@ const Projects = () => {
       tech: ['React', 'Tailwind CSS'],
       liveDemo: 'https://pass-ops.vercel.app',
       github: 'https://github.com/ARpatel-ARP/Pass-ops',
-      gradient: 'from-green-500/20 to-emerald-500/20',
+      gradient: 'from-blue-500/20 to-emerald-500/20',
       icon: FiLock,
     },
     

@@ -31,7 +31,7 @@ const Experience = () => {
       place: 'Google',
       description: 'Completed a certified course in Artificial Intelligence and Machine Learning issued by Google',
       icon: FiAward,
-      color: 'from-green-500 to-emerald-500',
+      color: 'from-blue-500 to-emerald-500',
       link: 'https://drive.google.com/file/d/1J10NqWET2t9n4P3WG98M0tpdQA93jf9_/view',
     },
   ];
