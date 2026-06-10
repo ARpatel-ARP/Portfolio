@@ -77,7 +77,7 @@ const Hero = () => {
               <FiArrowDown className="group-hover:translate-y-1 transition-transform" />
             </button>
             <a
-              href="https://drive.google.com/file/d/1gosRYS6T1igCzZumieQ3044IVUSy74ld/view?usp=drivesdk"
+              href="https://drive.google.com/file/d/1wb0rrTtFfgKs2vt6JfoCYjabzP_TbSmz/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 border-2 border-primary text-primary font-dm font-semibold rounded-lg hover:bg-primary hover:text-dark transition-all duration-300 flex items-center gap-2"
